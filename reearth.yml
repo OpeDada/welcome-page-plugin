@@ -1,0 +1,50 @@
+id: welcome-page-plugin
+name: Welcome Page Reearth Plugin
+version: 2.0.0
+extensions:
+  - id: welcome
+    type: widget
+    name: Welcome Page
+    schema:
+      groups:
+        - id: page_setting
+          title: Page
+          list: true
+          description: You may change the page setting here.
+          representativeField: page_type
+          fields:
+            - id: page_type
+              type: string
+              title: Page Type
+              defaultValue: welcome_page
+              choices:
+                - key: welcome_page
+                  label: Welcome Page
+                - key: md_page
+                  label: MD Content Page
+                - key: tutorial_page
+                  label: Tutorial Page
+                - key: agreement_page
+                  label: Agreement Page
+            - id: page_title
+              type: string
+              title: Title
+              availableIf:
+                field: page_type
+                type: string
+                value: welcome_page
+            - id: page_description
+              type: string
+              title: Description
+              ui: multiline
+              availableIf:
+                field: page_type
+                type: string
+                value: welcome_page
+            - id: media_type
+              type: string
+              title: Media Type
+              defaultValue: image_type
+              choices:
+                - key: image_type
+                  label: Image
