@@ -48,3 +48,5 @@ extensions:
               choices:
                 - key: image_type
                   label: Image
+                - key: video_type
+                  label: Video
